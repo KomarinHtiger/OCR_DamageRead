@@ -1,0 +1,19 @@
+# 仮想環境
+.venv/
+
+# Pythonキャッシュ
+__pycache__/
+*.pyc
+
+# 画像データ（重いので除外）
+src/image/
+
+# OCR結果
+src/result.txt
+
+# OS系
+.DS_Store
+Thumbs.db
+
+# 開発用
+dev/
