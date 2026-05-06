@@ -70,15 +70,15 @@ class Config:
     debug_mode:        bool               = False   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
     output_txt:        bool               = True    # True にすると result.txt を出力する
     gt_mode:           bool               = False   # True にすると GT ファイルと照合する
-    gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")
-    slot_separator:    str                = "."
-    team_separator:    str                = " : "
-    round_value:       int                = 10000
-    slots:             Optional[List[float]] = None
-    y_min:             int                = 400
-    y_max:             int                = 770
-    roi_width:         int                = 120
-    digit_band_height: int                = 55
+    gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")  # GT ファイルのパス
+    slot_separator:    str                = "."     # スロット同士の区切り文字
+    team_separator:    str                = " : "   # 敵味方の区切り文字
+    round_value:       int                = 10000   # スロット値を整数化するための除数（例: 10000 → 小数点以下4桁まで保持）
+    slots:             Optional[List[float]] = None # スロットのX座標（0.0-1.0）。None の場合は等間隔に自動生成される
+    y_min:             int                = 400     # 数字帯の検出範囲（画像上端からの最小Y座標）
+    y_max:             int                = 770     # 数字帯の検出範囲（画像上端からの最大Y座標）
+    roi_width:         int                = 120     # 数字帯の幅
+    digit_band_height: int                = 55      # 数字帯の高さ
 
     def __post_init__(self):
         if self.slots is None:
