@@ -67,7 +67,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 @dataclass
 class Config:
     """OCR処理の設定。変更するのは CONFIG = Config() の箇所のみ。"""
-    debug_mode:        bool               = False   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
+    debug_mode:        bool               = True   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
     output_txt:        bool               = True    # True にすると result.txt を出力する
     gt_mode:           bool               = False   # True にすると GT ファイルと照合する
     gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")  # GT ファイルのパス
