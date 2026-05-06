@@ -90,8 +90,11 @@ OCR_DamageRead/
 ### 基本的な使い方
 
 1. 処理したいスクリーンショット（`.png` / `.jpg` / `.jpeg`）を `src/image/` に置く
+
 ![処理対象スクショ投下](docs/file_add.png)
+
 2. スクリプトを実行する(下記リンクは実行プレビュー)
+
 https://x.com/KoTiger_6295/status/2022640605495726469?s=20
 
 ```
