@@ -10,6 +10,7 @@ Tesseract OCR を用いて 12 スロット分の数値を並列処理し、`resu
 - Python 3.11 以上
 - Windows 10 / 11（メイン開発・動作確認環境）
 - Tesseract OCR 5.x（別途インストールが必要、後述）
+- CUIでの実行、PowerShellで動作確認済み。
 
 ---
 
@@ -23,12 +24,6 @@ https://github.com/UB-Mannheim/tesseract/wiki
 インストール時に **「Additional language data」→「Japanese」** にチェックを入れ、日本語モデル（`jpn.traineddata`）を同時にインストールしてください。
 
 インストール先はデフォルト（`C:\Program Files\Tesseract-OCR\`）のままで問題ありません。  
-別の場所にインストールした場合は、環境変数 `TESSERACT_CMD` に実行ファイルのパスを設定してください。
-
-```
-# 例（PowerShell）
-$env:TESSERACT_CMD = "D:\Tools\Tesseract\tesseract.exe"
-```
 
 ### 2. Python パッケージのインストール
 
@@ -95,7 +90,9 @@ OCR_DamageRead/
 ### 基本的な使い方
 
 1. 処理したいスクリーンショット（`.png` / `.jpg` / `.jpeg`）を `src/image/` に置く
-2. スクリプトを実行する
+![処理対象スクショ投下](docs/file_add.png)
+2. スクリプトを実行する(下記リンクは実行プレビュー)
+https://x.com/KoTiger_6295/status/2022640605495726469?s=20
 
 ```
 cd src
@@ -117,8 +114,7 @@ python OCR_DamageRead_v0.485.py
 
 ## 設定
 
-`src/OCR_DamageRead_v0.490.py` の `CONFIG = Config()` の行を変更してください。  
-それ以外の箇所は変更不要です。
+`src/OCR_DamageRead_v0.490.py` の `初期設定クラス` の行を変更してください。  
 
 ```python
 CONFIG = Config(
@@ -201,3 +197,7 @@ Tesseract がインストールされていないか、インストール先が�
 **GT モードで「GT行数と画像枚数が一致しません」と表示される**  
 `GT_text/` 内の正解ファイルの行数と `image/` 内の画像ファイル数が一致していません。  
 どちらかが多い・少ない場合に発生します。
+
+## License
+
+This project is licensed under the MIT License.
