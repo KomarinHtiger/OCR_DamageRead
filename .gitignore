@@ -1,13 +1,14 @@
-# --- 全無視 ---
+# imageフォルダの中身だけ無視（←ここがポイント）
 src/image/*
 
-# --- sampleだけ許可 ---
+# sampleだけ許可
 !src/image/sample/
 !src/image/sample/**
 
-# --- 不要ファイル ---
+# その他
 .venv/
 src/result.txt
+src/OCR_DamageRead_v0.485.py
 __pycache__/
 *.pyc
 dev/
