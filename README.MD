@@ -120,12 +120,20 @@ python OCR_DamageRead_v0.485.py
 `src/OCR_DamageRead_v0.490.py` の `初期設定クラス` の行を変更してください。  
 
 ```python
-CONFIG = Config(
-    debug_mode = False,   # True にするとデバッグウィンドウとCUI出力が有効になる
-    output_txt = True,    # True にすると result.txt を出力する
-    gt_mode    = False,   # True にすると GT ファイルと照合する
-    gt_file    = os.path.join(_HERE, "GT_text", "GT_sample.txt"),
-)
+# =========================================================
+# 初期設定クラス：　16:9フルスクリーンでのチューニング
+# =========================================================
+@dataclass
+class Config:
+    """OCR処理の設定。変更するのは CONFIG = Config() の箇所のみ。"""
+    debug_mode:        bool               = False   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
+    output_txt:        bool               = True    # True にすると result.txt を出力する
+    gt_mode:           bool               = False   # True にすると GT ファイルと照合する
+    gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")  # GT ファイルのパス
+    slot_separator:    str                = "."     # スロット同士の区切り文字
+    team_separator:    str                = " : "   # 敵味方の区切り文字
+    round_value:       int                = 10000   # スロット値を整数化するための除数（例: 10000 → 小数点以下4桁まで保持）
+    ...
 ```
 
 | 設定項目 | 説明 |
