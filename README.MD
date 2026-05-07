@@ -125,7 +125,6 @@ python OCR_DamageRead_v0.485.py
 # =========================================================
 @dataclass
 class Config:
-    """OCR処理の設定。変更するのは CONFIG = Config() の箇所のみ。"""
     debug_mode:        bool               = False   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
     output_txt:        bool               = True    # True にすると result.txt を出力する
     gt_mode:           bool               = False   # True にすると GT ファイルと照合する
