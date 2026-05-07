@@ -66,11 +66,10 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 # =========================================================
 @dataclass
 class Config:
-    """OCR処理の設定。変更するのは CONFIG = Config() の箇所のみ。"""
     debug_mode:        bool               = True   # True にするとデバッグウィンドウとCUIデバッグ出力が有効になる
     output_txt:        bool               = True    # True にすると result.txt を出力する
     gt_mode:           bool               = False   # True にすると GT ファイルと照合する
-    gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")  # GT ファイルのパス
+    gt_file:           str                = os.path.join(_HERE, "GT_text", "GT_sample.txt")  # GTファイルと名前のパス
     slot_separator:    str                = "."     # スロット同士の区切り文字
     team_separator:    str                = " : "   # 敵味方の区切り文字
     round_value:       int                = 10000   # スロット値を整数化するための除数（例: 10000 → 小数点以下4桁まで保持）
